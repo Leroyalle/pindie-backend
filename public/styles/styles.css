@@ -1,0 +1,87 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 3em;
+  background: #59C173;
+  background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173);  
+  background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173);
+
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  margin-bottom: 1em;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: currentColor;
+  word-break: break-all;
+}
+
+section {
+  margin-bottom: 3em;
+  padding: 3em;
+  background-color: #fff;
+  border-radius: 2em;
+}
+
+.games-list {
+  display: grid;
+  gap: 1em;
+}
+
+.games-list li article {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1em;
+}
+
+.games-list li article .description {
+  display: grid;
+  gap: 1em;
+}
+
+.users-list li div {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr;
+}
+
+ul li {
+  margin-bottom: 1em;
+  border-bottom: 1px dotted #333;
+}
+
+.games-list > li {
+  border-bottom: none;
+}
+
+
+@media (width <= 600px) {
+  .games-list li article {
+    grid-template-columns: 1fr;
+  }
+  .users-list li div {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <section>
+    <h2>Игры</h2>
+    <ul class="games-list"></ul>
+  </section>
+  <section>
+    <h2>Категории</h2>
+    <ul class="categories-list"></ul>
+  </section>
+  <section>
+    <h2>Пользователи</h2>
+    <ul class="users-list"></ul>
+  </section>
+
+  <template id="game-list-item">
+    <li>
+      <article>
+        <img src="" alt="">
+        <div class="description">
+          <h3></h3>
+          <p class="text"></p>
+          <p class="developer"></p>
+          <p class="link">
+            Ссылка: <a href="" target="_blank"></a>
+          </p>
+          <p class="category">Категории:</p>
+          <ul class="categories"></ul>
+          <p class="users">Проголосовали:</p>
+          <ul class="votes"></ul>
+        </div>
+      </article>
+    </li>
+  </template>
+
+  <template id="category-list-item">
+    <li>
+      <div>
+        <p class="name"></p>
+      </div>
+    </li>
+  </template>
+
+  <template id="user-list-item">
+    <li>
+      <div>
+        <p class="name"></p>
+        <p class="email"></p>
+      </div>
+    </li>
+  </template>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>

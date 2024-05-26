@@ -7,7 +7,7 @@ const {
   sendGameUpdated,
   sendGameDeleted,
 } = require('../controllers/games');
-const checkAuth = require('../middlewares/auth');
+const { checkAuth } = require('../middlewares/auth');
 const {
   findAllGames,
   createGame,

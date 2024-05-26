@@ -8,7 +8,7 @@ const {
   sendUserDeleted,
   sendMe,
 } = require('../controllers/users');
-const checkAuth = require('../middlewares/auth');
+const { checkAuth } = require('../middlewares/auth');
 const {
   findAllUsers,
   createUser,
@@ -41,4 +41,5 @@ usersRouter.put(
 );
 usersRouter.delete('/users/:id', checkAuth, deleteUser, sendUserDeleted);
 usersRouter.get('/me', checkAuth, sendMe);
+
 module.exports = usersRouter;

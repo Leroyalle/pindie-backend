@@ -7,7 +7,7 @@ const {
   sendCategoryUpdated,
   sendCategoryDeleted,
 } = require('../controllers/categories');
-const checkAuth = require('../middlewares/auth');
+const { checkAuth } = require('../middlewares/auth');
 const {
   findAllCategories,
   createCategory,

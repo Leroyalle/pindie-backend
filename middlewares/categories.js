@@ -46,10 +46,36 @@ const deleteCategory = async (req, res, next) => {
   }
 };
 
+const checkIsCategoryExits = async (req, res, next) => {
+  try {
+    const isInArray = await req.categoriesArray.find((category) => req.body.name === category.name);
+    if (isInArray) {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(400).send(JSON.stringify({ message: 'Категория уже существует' }));
+    } else {
+      next();
+    }
+  } catch (e) {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(400).send(JSON.stringify({ message: 'Произошла ошибка при проверке категории' }));
+  }
+};
+
+const checkEmptyName = (req, res, next) => {
+  if (!req.body.name) {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(400).send(JSON.stringify({ message: 'Заполни имя категории' }));
+  } else {
+    next();
+  }
+};
+
 module.exports = {
   findAllCategories,
   createCategory,
   findCategoryById,
   updateCategory,
   deleteCategory,
+  checkIsCategoryExits,
+  checkEmptyName,
 };
